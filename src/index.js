@@ -9,6 +9,7 @@ function displayResults(response, startCountry) {
   if (response.result === "success") {
     const countryCode = $('#countryId :selected').val();
     const amount = $("#moneyNum").val();
+    $("#moneyNum").val('');
     const conversionRate = response.conversion_rates[countryCode];
     const convertedResult = Math.round(100 * (amount * conversionRate)) / 100;
     $("#results").html(`${amount} ${startCountry} => ${countryCode}: ${convertedResult}`)
