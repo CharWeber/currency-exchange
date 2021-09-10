@@ -6,19 +6,27 @@ import './css/styles.css';
 import CurrencyService from './service';
 
 function displayResults(response, startCountry) {
-  if (response.result === "success") {
-    const countryCode = $('#countryId :selected').val();
-    const amount = $("#moneyNum").val();
-    $("#moneyNum").val('');
+  const countryCode = $('#countryId :selected').val();
+  const amount = $("#moneyNum").val();
+  $("#moneyNum").val('');
+  if (amount<0){
+    $("#errorDisplay").html('Please input a positive money amount')
+    $("#results").html('')
+    $("#conversionRate").html('')
+  }
+  else if (response.result === "success") {
     const conversionRate = response.conversion_rates[countryCode];
     const convertedResult = Math.round(100 * (amount * conversionRate)) / 100;
     $("#results").html(`${amount} ${startCountry} => ${countryCode}: ${convertedResult}`)
     $("#conversionRate").html(`current conversion rate: ${conversionRate}`)
-    $('#postConvert').removeClass('hidden')
+    $("#errorDisplay").html('')
   }
   else {
     $("#errorDisplay").html(`there was an error: ${response.error}`)
+    $("#results").html('')
+    $("#conversionRate").html('')
   }
+  $('#postConvert').removeClass('hidden')
 }
 
 
