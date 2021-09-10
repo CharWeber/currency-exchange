@@ -2,14 +2,25 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-// import anime from 'animejs/lib/anime.es.js'
+import anime from 'animejs/lib/anime.es.js'
 import CurrencyService from './service';
+
+let signAni = anime({
+  targets:'#sign',
+  translateY: -50,
+  duration:3000,
+  delay: anime.stagger(100),
+  direction: 'alternate',
+  loop:true,
+  easing: 'easeInOutElastic',
+});
+
+
+signAni.play();
 
 function displayResults(response, startCountry) {
   if (!response.result) {
     $("#errorDisplay").html('Please input a valid currency');
-    $("#results").html('');
-    $("#conversionRate").html('');
   }else{
     const countryCode = $('#countryId :selected').val();
     const amount = $("#moneyNum").val();
@@ -17,19 +28,14 @@ function displayResults(response, startCountry) {
     const convertedResult = Math.round(100 * (amount * conversionRate)) / 100;
     if (amount < 0) {
       $("#errorDisplay").html('Please input a positive money amount');
-      $("#results").html('');
-      $("#conversionRate").html('');
     }
     else if (response.result === "success") {
       $("#grandTotal").html(`Converted Amount: ${convertedResult}`);
       $("#results").html(`${amount} ${startCountry} => ${countryCode}: ${convertedResult}`);
       $("#conversionRate").html(`current conversion rate: ${conversionRate}`);
-      $("#errorDisplay").html('');
     }
     else {
       $("#errorDisplay").html(`there was an error: ${response.error}`);
-      $("#results").html('');
-      $("#conversionRate").html('');
     }
   }
   $('#postConvert').removeClass('hidden');
