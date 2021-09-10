@@ -20,20 +20,39 @@
           <option value="AUD">Australian dollar (AUD)</option>
           <option value="CAD">Canadian Dollar (CAD)</option>
           <option value="USD"selected>United States Dollar (USD)</option>
+          <option value="CHF">Swiss franc (CHF)</option>
+          <option value="CNY">Renminbi (CNY)</option>
+          <option value="HKD">Hong Kong dollar (HKD)</option>
+          <option value="NZD">New Zealand dollar (NZD)</option>
+          <option value="SEK">Swedish krona (SEK)</option>
+          <option value="KRW">South Korean won (KRW)</option>
+          <option value="SGD">Singapore dollar (SGD)</option>
+          <option value="NOK">Norwegian krone (NOK)</option>
+          <option value="MXN">Mexican peso (MXN)</option>
         </select>
         =>(to convert)=>
         <select name="toBeChanged" id="countryId" class="dropdown">
-          <option value="EUR" selected>Euro (EUR)</option>
+          <option value="EUR"selected>Euro (EUR)</option>
           <option value="JPY">Japanese Yen (JPY)</option>
           <option value="GBP">English Pounds (GBP)</option>
           <option value="AUD">Australian dollar (AUD)</option>
-          <option value="CAD">Canadian Dollar</option>
+          <option value="CAD">Canadian Dollar (CAD)</option>
           <option value="USD">United States Dollar (USD)</option>
+          <option value="CHF">Swiss franc (CHF)</option>
+          <option value="CNY">Renminbi (CNY)</option>
+          <option value="HKD">Hong Kong dollar (HKD)</option>
+          <option value="NZD">New Zealand dollar (NZD)</option>
+          <option value="SEK">Swedish krona (SEK)</option>
+          <option value="KRW">South Korean won (KRW)</option>
+          <option value="SGD">Singapore dollar (SGD)</option>
+          <option value="NOK">Norwegian krone (NOK)</option>
+          <option value="MXN">Mexican peso (MXN)</option>
         </select>
         <button class="btn btn-warning" type="button" id="exBtn">Exchange</button>
       </div>
     </div>
     <div id='postConvert' class="card hidden">
+      <div id="grandTotal" class="highlight"></div>
       <div id="results"></div>
       <div id="conversionRate"></div>
       <div id="errorDisplay"></div>

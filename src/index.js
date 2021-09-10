@@ -21,6 +21,7 @@ function displayResults(response, startCountry) {
       $("#conversionRate").html('');
     }
     else if (response.result === "success") {
+      $("#grandTotal").html(`Converted Amount: ${convertedResult}`);
       $("#results").html(`${amount} ${startCountry} => ${countryCode}: ${convertedResult}`);
       $("#conversionRate").html(`current conversion rate: ${conversionRate}`);
       $("#errorDisplay").html('');
@@ -35,11 +36,19 @@ function displayResults(response, startCountry) {
   $("#moneyNum").val('');
 }
 
+function clearFields(){
+  $("#results").html('');
+  $("#conversionRate").html('');
+  $("#errorDisplay").html('');
+  $("#grandTotal").html('');
+}
+
 
 $(document).ready(function () {
 
   $('#exBtn').click(function () {
     const startCountry = $('#startCountry :selected').val();
+    clearFields();
     CurrencyService.getMoney(startCountry)
       .then(function (response) {
         displayResults(response, startCountry);
