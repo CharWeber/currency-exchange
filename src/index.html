@@ -7,18 +7,31 @@
 
 <body>
   <div class="container">
-    <div id="USamount">
-      <input type="number" name="USDollar" id="usNum">
-    </div>
-    <div id="toBeChanged">
-      <select name="toBeChanged" id="countryId" class="dropdown">
-        <option value="EUR" selected>Euro (EUR)</option>
-        <option value="JPY">Japanese Yen (JPY)</option>
-        <option value="GBP">English Pounds (GBP)</option>
-        <option value="AUD">Australian dollar (AUD)</option>
-        <option value="CAD">Canadian Dollar</option>
-      </select>
-      <button class="btn btn-warning" type="button" id="exBtn">Exchange</button>
+    <div class="card">
+      <div id="moneyAmount">
+        <label for="money">Amount to be converted</label>
+        <input type="number" name="money" id="moneyNum">
+      </div>
+      <div id="moneyChange">
+        <select name="startCountry" id="startCountry" class="dropdown">
+          <option value="EUR">Euro (EUR)</option>
+          <option value="JPY">Japanese Yen (JPY)</option>
+          <option value="GBP">English Pounds (GBP)</option>
+          <option value="AUD">Australian dollar (AUD)</option>
+          <option value="CAD">Canadian Dollar (CAD)</option>
+          <option value="USD"selected>United States Dollar (USD)</option>
+        </select>
+        =>(to convert)=>
+        <select name="toBeChanged" id="countryId" class="dropdown">
+          <option value="EUR" selected>Euro (EUR)</option>
+          <option value="JPY">Japanese Yen (JPY)</option>
+          <option value="GBP">English Pounds (GBP)</option>
+          <option value="AUD">Australian dollar (AUD)</option>
+          <option value="CAD">Canadian Dollar</option>
+          <option value="USD">United States Dollar (USD)</option>
+        </select>
+        <button class="btn btn-warning" type="button" id="exBtn">Exchange</button>
+      </div>
     </div>
     <div id="results"></div>
     <div id="conversionRate"></div>
