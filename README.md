@@ -1,8 +1,8 @@
-# _{template-repo}_
+# _Currency Exchange_
 
-#### _{Brief description of application}_
+#### _exchange money from USD to a user selected currency_
 
-#### By _**{List of contributors}**_
+#### By _**Charlie Weber**_
 
 ## Technologies Used
 
@@ -35,4 +35,4 @@ _{Let people know what to do if they run into any issues or have questions, idea
 
 ## Contact Information
 
-_{Add your contact information here.}_
+_[email][mailto:Charlestweber@gmail.com]_
