@@ -10,9 +10,10 @@ function displayResults(response, startCountry) {
     const countryCode = $('#countryId :selected').val();
     const amount = $("#moneyNum").val();
     const conversionRate = response.conversion_rates[countryCode];
-    const convertedResult = Math.round(100*(amount * conversionRate))/100;
+    const convertedResult = Math.round(100 * (amount * conversionRate)) / 100;
     $("#results").html(`${amount} ${startCountry} => ${countryCode}: ${convertedResult}`)
     $("#conversionRate").html(`current conversion rate: ${conversionRate}`)
+    $('#postConvert').removeClass('hidden')
   }
   else {
     $("#errorDisplay").html(`there was an error: ${response.error}`)
@@ -23,9 +24,7 @@ function displayResults(response, startCountry) {
 $(document).ready(function () {
 
   $('#exBtn').click(function () {
-    console.log('button clicked');
     const startCountry = $('#startCountry :selected').val();
-    $("#usNum").val("");
     CurrencyService.getMoney(startCountry)
       .then(function (response) {
         displayResults(response, startCountry);
