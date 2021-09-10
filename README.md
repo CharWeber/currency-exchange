@@ -1,38 +1,51 @@
 # _Currency Exchange_
 
-#### _exchange money from USD to a user selected currency_
+#### _exchange money from USD to a user selected currency and vice versa_
 
 #### By _**Charlie Weber**_
 
 ## Technologies Used
 
-* _List all_
-* _the major technologies_
-* _you used in your project_
-* _here_
+* JS
+* HTML
+* CSS
+* anime.js
 
 ## Description
 
-_{This is a detailed description of your application. Give as much detail as needed to explain what the application does as well as any other information you want users or other developers to have.}_
+This Application is designed to call a currency API and calculate currency exchange based on the updated api info.
 
 ## Setup/Installation Requirements
 
-* _clone template-repo to desired directory or download .zip file_
-* _navigate to the template-repo directory in terminal or other command line interface_
-* _while in the root directory run $ npm install_
-* _once bundle.js and the mode_module are installed open index.html in any browser_
+* _clone currency-exchange to desired directory or download .zip file_
+* _navigate to the  directory in terminal or other command line interface_
 
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this application depends on? We recommend deleting the project from your desktop, re-cloning the project from GitHub, and writing down all the steps necessary to get the project working again.}_
+      $ cd currency-exchange
+
+* _while in the root directory install nodes with:_
+
+      $ npm install
+
+* _aquire API key from https://www.exchangerate-api.com/_
+* _create a .env file and save your api key as_
+
+      API_KEY={YOUR-API-KEY-HERE}
+
+* _be sure to remove the brackets around your api key. this will not function properly without one or without proper saving._
+* _once bundle.js and the node_module are installed run this command_
+
+      $ npm run start
+
+* _if the animations are not running double check that anime.js is version 3.2.1_
 
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
+* _No known issues_
 
 ## License
 
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}_
+_MIT whatever_
 
 ## Contact Information
 
-_[email][mailto:Charlestweber@gmail.com]_
+_Charlestweber@gmail.com_

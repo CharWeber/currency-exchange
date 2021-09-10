@@ -8,6 +8,7 @@ import CurrencyService from './service';
 let signAni = anime({
   targets:'#sign',
   translateY: -50,
+  rotate: 360,
   duration:3000,
   delay: anime.stagger(100),
   direction: 'alternate',
