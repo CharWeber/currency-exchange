@@ -6,30 +6,30 @@ import './css/styles.css';
 import CurrencyService from './service';
 
 function displayResults(response, startCountry) {
-  const validCountry = response.conversion_rates;
-  const countryCode = $('#countryId :selected').val();
-  const amount = $("#moneyNum").val();
-  const conversionRate = response.conversion_rates[countryCode];
-  const convertedResult = Math.round(100 * (amount * conversionRate)) / 100;
-  if(!validCountry[startCountry] || !validCountry[countryCode]){
+  if (!response.result) {
     $("#errorDisplay").html('Please input a valid currency');
     $("#results").html('');
     $("#conversionRate").html('');
-  }
-  else if (amount<0){
-    $("#errorDisplay").html('Please input a positive money amount');
-    $("#results").html('');
-    $("#conversionRate").html('');
-  }
-  else if (response.result === "success") {
-    $("#results").html(`${amount} ${startCountry} => ${countryCode}: ${convertedResult}`);
-    $("#conversionRate").html(`current conversion rate: ${conversionRate}`);
-    $("#errorDisplay").html('');
-  }
-  else {
-    $("#errorDisplay").html(`there was an error: ${response.error}`);
-    $("#results").html('');
-    $("#conversionRate").html('');
+  }else{
+    const countryCode = $('#countryId :selected').val();
+    const amount = $("#moneyNum").val();
+    const conversionRate = response.conversion_rates[countryCode];
+    const convertedResult = Math.round(100 * (amount * conversionRate)) / 100;
+    if (amount < 0) {
+      $("#errorDisplay").html('Please input a positive money amount');
+      $("#results").html('');
+      $("#conversionRate").html('');
+    }
+    else if (response.result === "success") {
+      $("#results").html(`${amount} ${startCountry} => ${countryCode}: ${convertedResult}`);
+      $("#conversionRate").html(`current conversion rate: ${conversionRate}`);
+      $("#errorDisplay").html('');
+    }
+    else {
+      $("#errorDisplay").html(`there was an error: ${response.error}`);
+      $("#results").html('');
+      $("#conversionRate").html('');
+    }
   }
   $('#postConvert').removeClass('hidden');
   $("#moneyNum").val('');
