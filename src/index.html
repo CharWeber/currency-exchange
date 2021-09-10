@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>currency-exchange</title>
 </head>
+
 <body>
-  <div id="USamount">
-    <input type="number" name="USDollar" id="usNum">
+  <div class="container">
+    <div id="USamount">
+      <input type="number" name="USDollar" id="usNum">
+    </div>
+    <div id="toBeChanged">
+      <select name="toBeChanged" id="countryId" class="dropdown">
+        <option value="EUR" selected>Euro (EUR)</option>
+        <option value="JPY">Japanese Yen (JPY)</option>
+        <option value="GBP">English Pounds (GBP)</option>
+        <option value="AUD">Australian dollar (AUD)</option>
+        <option value="CAD">Canadian Dollar</option>
+      </select>
+      <button class="btn btn-warning" type="button" id="exBtn">Exchange</button>
+    </div>
+    <div id="results"></div>
+    <div id="conversionRate"></div>
+    <div id="errorDisplay"></div>
   </div>
-  <div id="toBeChanged">
-    <select name="toBeChanged" id="countryId" class="dropdown"></select>
-  </div>
-  <div class="currentEx">USE => <span id="countryToConvert"></span>: <span id="exchangeRate"></span></div>
-  <div id="results"></div>
 </body>
+
 </html>
